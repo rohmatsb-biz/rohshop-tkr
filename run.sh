@@ -127,7 +127,7 @@ clear
 # Valid Script
 ipsaya=$(wget -qO- ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-data_ip="https://raw.githubusercontent.com/Ryuchiii/izinkansaya/main/ip"
+data_ip="https://raw.githubusercontent.com/rohmatsb-biz/izinkansaya/main/ip"
 use=$(wget -qO- $data_ip | grep $ipsaya | awk '{print $2}')
 checking_sc() {
   useexp=$(wget -qO- $data_ip | grep $ipsaya | awk '{print $3}')
@@ -157,9 +157,9 @@ clear
 #########################
 # USERNAME
 rm -f /usr/bin/user
-username=$(curl https://raw.githubusercontent.com/Ryuchiii/izinkansaya/main/ip | grep $MYIP | awk '{print $2}')
+username=$(curl https://raw.githubusercontent.com/rohmatsb-biz/izinkansaya/main/ip | grep $MYIP | awk '{print $2}')
 echo "$username" >/usr/bin/user
-expx=$(curl https://raw.githubusercontent.com/Ryuchiii/izinkansaya/main/ip | grep $MYIP | awk '{print $3}')
+expx=$(curl https://raw.githubusercontent.com/rohmatsb-biz/izinkansaya/main/ip | grep $MYIP | awk '{print $3}')
 echo "$expx" >/usr/bin/e
 # DETAIL ORDER
 username=$(cat /usr/bin/user)
@@ -183,7 +183,7 @@ mai="datediff "$Exp" "$DATE""
 Info="(${green}Active${NC})"
 Error="(${RED}ExpiRED${NC})"
 today=`date -d "0 days" +"%Y-%m-%d"`
-Exp1=$(curl https://raw.githubusercontent.com/Ryuchiii/izinkansaya/main/ip | grep $MYIP | awk '{print $4}')
+Exp1=$(curl https://raw.githubusercontent.com/rohmatsb-biz/izinkansaya/main/ip | grep $MYIP | awk '{print $4}')
 if [[ $today < $Exp1 ]]; then
 sts="${Info}"
 else
@@ -376,8 +376,8 @@ function notif_bot() {
     KEY="6478027776:AAGBRpE2Scyqsf8gHhVPukhREmD4CmaYgEI"
     TIME="10"
     URL="https://api.telegram.org/bot$KEY/sendMessage"
-    USRSC=$(curl https://raw.githubusercontent.com/Ryuchiii/izinkansaya/main/ip | grep $ipsaya | awk '{print $2}')
-    EXPSC=$(curl https://raw.githubusercontent.com/Ryuchiii/izinkansaya/main/ip | grep $ipsaya | awk '{print $3}')
+    USRSC=$(curl https://raw.githubusercontent.com/rohmatsb-biz/izinkansaya/main/ip | grep $ipsaya | awk '{print $2}')
+    EXPSC=$(curl https://raw.githubusercontent.com/rohmatsb-biz/izinkansaya/main/ip | grep $ipsaya | awk '{print $3}')
     TIMES=`date -d "0 days" +"%d-%m-%Y" `
     TIMEZONE=$(printf '%(%H:%M:%S)T')
     TEXT="
